@@ -1,2 +1,464 @@
-# libras
-libras
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INCLUIR+ | Acessibilidade para todos</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f7fc;
+  color: #203c57;
+  transition: 0.3s;
+}
+
+header {
+  background: #164c78;
+  color: white;
+  padding: 22px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #80d5ff;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #80d5ff;
+}
+
+.inicio {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+}
+
+.inicio img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(60%);
+}
+
+.inicio-texto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  width: 90%;
+}
+
+.inicio-texto h1 {
+  font-size: clamp(30px, 5vw, 48px);
+  margin-bottom: 15px;
+}
+
+.inicio-texto p {
+  font-size: 25px;
+}
+
+section {
+  padding: 55px 7%;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 45px;
+  margin-bottom: 12px;
+}
+
+section h3 {
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+
+section p {
+  margin-bottom: 20px;
+}
+
+.botoes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+button {
+  background: #17669c;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 15px 22px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #0c416a;
+  transform: translateY(-3px);
+}
+
+button:focus, a:focus {
+  outline: 3px solid #ffbf47;
+  outline-offset: 3px;
+}
+
+#resultado {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  margin: 25px auto;
+  max-width: 600px;
+  min-height: 65px;
+  font-size: 22px;
+  box-shadow: 0 3px 12px #0001;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+  max-width: 1000px;
+  margin: 30px auto;
+}
+
+.card {
+  background: white;
+  padding: 13px;
+  border-radius: 18px;
+  box-shadow: 0 3px 15px #0001;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.card button {
+  width: 100%;
+  margin-top: 12px;
+}
+
+.parar {
+  background: #b53b3b;
+}
+
+footer {
+  background: #164c78;
+  color: white;
+  text-align: center;
+  padding: 35px;
+}
+
+footer p {
+  margin-top: 10px;
+}
+
+body.contraste {
+  background: #000;
+  color: #fff;
+}
+
+body.contraste section,
+body.contraste .card,
+body.contraste #resultado {
+  background: #000;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+@media(max-width: 600px) {
+  header {
+    justify-content: center;
+    text-align: center;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  .inicio {
+    height: 300px;
+  }
+
+  section {
+    padding: 40px 5%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">INCLUIR<span>+</span></div>
+
+  <nav>
+    <a href="#libras">🤟 Libras</a>
+    <a href="#audio">🔊 Áudio</a>
+    <a href="#acessibilidade">♿ Acessibilidade</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="inicio">
+  <img
+    src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200"
+    alt="Grupo de amigos reunidos e sorrindo">
+
+  <div class="inicio-texto">
+    <h1>Um mundo para todos</h1>
+    <p>💙 🤝 🌎</p>
+  </div>
+</section>
+
+<!-- LIBRAS -->
+
+<section id="libras">
+
+  <h2>🤟</h2>
+  <h3>Comunicação em Libras</h3>
+  <p>Escolha uma expressão:</p>
+
+  <div class="botoes">
+    <button onclick="mostrarLibras('Olá')">👋 Olá</button>
+    <button onclick="mostrarLibras('Obrigado')">❤️ Obrigado</button>
+    <button onclick="mostrarLibras('Bom dia')">☀️ Bom dia</button>
+    <button onclick="mostrarLibras('Tudo bem?')">😊 Tudo bem?</button>
+    <button onclick="mostrarLibras('Por favor')">🙏 Por favor</button>
+    <button onclick="mostrarLibras('Ajuda')">🤝 Ajuda</button>
+    <button onclick="mostrarLibras('Água')">💧 Água</button>
+  </div>
+
+  <div id="resultado" aria-live="polite">
+    Escolha uma palavra acima.
+  </div>
+
+  <p>Use o tradutor de Libras no botão de acessibilidade da página.</p>
+
+</section>
+
+<!-- AUDIODESCRIÇÃO -->
+
+<section id="audio">
+
+  <h2>🔊</h2>
+  <h3>Audiodescrição</h3>
+  <p>Clique nas imagens para ouvir:</p>
+
+  <div class="galeria">
+
+    <div class="card">
+      <img
+        src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600"
+        alt="Grupo de amigos reunidos">
+
+      <button onclick="ouvir('Um grupo de amigos está reunido ao ar livre, sorrindo e conversando.')">
+        ▶ Ouvir descrição
+      </button>
+    </div>
+
+    <div class="card">
+      <img
+        src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600"
+        alt="Pessoas trabalhando juntas">
+
+      <button onclick="ouvir('Pessoas estão reunidas ao redor de uma mesa, trabalhando juntas e compartilhando ideias.')">
+        ▶ Ouvir descrição
+      </button>
+    </div>
+
+    <div class="card">
+      <img
+        src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600"
+        alt="Pessoas reunidas em um momento de amizade">
+
+      <button onclick="ouvir('Um grupo de pessoas está reunido, demonstrando amizade e união.')">
+        ▶ Ouvir descrição
+      </button>
+    </div>
+
+  </div>
+
+  <button class="parar" onclick="pararAudio()">
+    ⏹ Parar áudio
+  </button>
+
+</section>
+
+<!-- ACESSIBILIDADE -->
+
+<section id="acessibilidade">
+
+  <h2>♿</h2>
+  <h3>Ferramentas de acessibilidade</h3>
+
+  <div class="botoes">
+
+    <button onclick="alterarFonte(2)">
+      A+ Aumentar letras
+    </button>
+
+    <button onclick="alterarFonte(-2)">
+      A- Diminuir letras
+    </button>
+
+    <button onclick="contraste()">
+      ◐ Alto contraste
+    </button>
+
+    <button onclick="restaurar()">
+      ↻ Restaurar
+    </button>
+
+    <button onclick="lerPagina()">
+      🔊 Ouvir página
+    </button>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+  <h2>INCLUIR+</h2>
+  <p>💙 Respeito • Igualdade • Inclusão</p>
+</footer>
+
+<!-- TRADUTOR VLibras -->
+
+<div vw class="enabled">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div>
+
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+<script>
+new window.VLibras.Widget(
+  "https://vlibras.gov.br/app"
+);
+</script>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function mostrarLibras(palavra) {
+
+  const resultado = document.getElementById("resultado");
+
+  resultado.innerHTML =
+    "Expressão escolhida: <strong>" +
+    palavra +
+    "</strong><br><br>Abra o tradutor VLibras para visualizar a tradução.";
+
+}
+
+function ouvir(texto) {
+
+  window.speechSynthesis.cancel();
+
+  const fala = new SpeechSynthesisUtterance(texto);
+
+  fala.lang = "pt-BR";
+  fala.rate = 0.9;
+
+  window.speechSynthesis.speak(fala);
+
+}
+
+function pararAudio() {
+
+  window.speechSynthesis.cancel();
+
+}
+
+let tamanhoFonte = 16;
+
+function alterarFonte(valor) {
+
+  tamanhoFonte += valor;
+
+  tamanhoFonte = Math.max(
+    12,
+    Math.min(30, tamanhoFonte)
+  );
+
+  document.body.style.fontSize =
+    tamanhoFonte + "px";
+
+}
+
+function contraste() {
+
+  document.body.classList.toggle("contraste");
+
+}
+
+function restaurar() {
+
+  document.body.classList.remove("contraste");
+
+  tamanhoFonte = 16;
+
+  document.body.style.fontSize = "16px";
+
+  pararAudio();
+
+}
+
+function lerPagina() {
+
+  pararAudio();
+
+  const texto =
+    document.querySelector("main").innerText;
+
+  ouvir(texto);
+
+}
+
+</script>
+
+</body>
+</html>
